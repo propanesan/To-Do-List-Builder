@@ -16,8 +16,8 @@ def task_item(task: Task) -> rx.Component:
                     task["text"],
                     class_name=rx.cond(
                         task["completed"],
-                        "ml-4 text-lg text-gray-500 line-through",
-                        "ml-4 text-lg text-gray-800",
+                        "ml-4 text-lg text-gray-500 line-through dark:text-gray-400",
+                        "ml-4 text-lg text-gray-800 dark:text-gray-200",
                     ),
                 ),
                 class_name="flex items-center",
@@ -25,10 +25,10 @@ def task_item(task: Task) -> rx.Component:
             rx.el.button(
                 rx.icon(tag="trash-2", class_name="h-5 w-5"),
                 on_click=lambda: TodoState.delete_task(task["id"]),
-                class_name="p-2 text-gray-400 hover:text-red-500",
+                class_name="p-2 text-gray-400 hover:text-red-500 dark:text-gray-500 dark:hover:text-red-500",
             ),
             class_name="flex items-center justify-between w-full",
         ),
-        class_name="flex items-center w-full p-4 h-[60px] bg-white border-b border-[#E0E0E0]",
+        class_name="flex items-center w-full p-4 h-[60px] bg-white dark:bg-gray-800 border-b border-[#E0E0E0] dark:border-gray-700",
         key=task["id"],
     )

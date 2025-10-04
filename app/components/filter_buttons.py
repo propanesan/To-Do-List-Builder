@@ -9,7 +9,7 @@ def filter_button(text: str, filter_type: FilterType) -> rx.Component:
         class_name=rx.cond(
             TodoState.current_filter == filter_type,
             "h-[44px] px-4 bg-orange-500 text-white font-medium",
-            "h-[44px] px-4 bg-gray-200 text-gray-800 font-medium hover:bg-gray-300",
+            "h-[44px] px-4 bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600",
         ),
     )
 
